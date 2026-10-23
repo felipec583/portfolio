@@ -1,0 +1,94 @@
+---
+import '../styles/global.css';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import type { Copy } from '../i18n/types.ts';
+
+interface Props {
+  copy: Copy;
+}
+
+const { copy } = Astro.props;
+const esHref = getRelativeLocaleUrl('es');
+const enHref = getRelativeLocaleUrl('en');
+---
+
+<!doctype html>
+<html lang={copy.htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Felipe Castillo</title>
+  </head>
+  <body>
+    <div class="wrap layout">
+      <aside class="side">
+        <div>
+          <h1>Felipe Castillo</h1>
+          <p class="role">{copy.role}</p>
+          <p class="tag">{copy.tagline}</p>
+          <div class="langs">
+            <a href={esHref} aria-current={copy.htmlLang === 'es' ? 'page' : undefined}>ES</a>
+            <a href={enHref} aria-current={copy.htmlLang === 'en' ? 'page' : undefined}>EN</a>
+          </div>
+          <ul class="jump">
+            {copy.nav.map((item) => (
+              <li><a href={`#${item.id}`}>{item.label}</a></li>
+            ))}
+          </ul>
+        </div>
+        <nav class="social" aria-label="Links">
+          <a href="https://github.com/felipec583" aria-label={copy.ariaGithub}>
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5A11.5 11.5 0 0 0 .5 12.3c0 5.2 3.4 9.6 8.1 11.2.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.2 1.8 1.2 1.1 1.9 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.4-1.3-5.4-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C16.6 4.7 17.6 5 17.6 5c.6 1.6.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.7-2.8 5.7-5.4 6 .4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6 4.7-1.6 8.1-6 8.1-11.2A11.5 11.5 0 0 0 12 .5z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/facl" aria-label={copy.ariaLinkedin}>
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.7 3.3A2.2 2.2 0 1 0 4.7 7.7 2.2 2.2 0 0 0 4.7 3.3zM3 8.8h3.4V21H3V8.8zM9.2 8.8H12.5v1.7h.1c.5-.9 1.6-1.8 3.3-1.8 3.5 0 4.2 2.3 4.2 5.3V21H16.7v-5.4c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21H9.2V8.8z"/></svg>
+          </a>
+          <a href="mailto:felipecastillo48@gmail.com" aria-label={copy.ariaEmail}>
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 5.5h18a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-11a1 1 0 0 1 1-1zm9 7.2 7.6-5.7H4.4L12 12.7zM4 16.8l4.7-3.5-1.2-1.6L4 14.4v2.4zm16 0v-2.4l-3.5-2.7-1.2 1.6L20 16.8z"/></svg>
+          </a>
+        </nav>
+      </aside>
+      <main class="main">
+        <section id="about">
+          <h2 class="label">{copy.aboutTitle}</h2>
+          <div class="about"><p>{copy.about}</p></div>
+        </section>
+        <section id="projects">
+          <h2 class="label">{copy.projectsTitle}</h2>
+          {copy.projects.map((project) => (
+            <article class="card">
+              <p class="meta">{project.dates}</p>
+              <h2><a href={project.href}>{project.name}</a></h2>
+              <p>{project.problem}</p>
+              <p>{project.built}</p>
+              <p>{project.decision}</p>
+              <ul class="pills">
+                {project.pills.map((pill) => <li>{pill}</li>)}
+              </ul>
+            </article>
+          ))}
+        </section>
+        <section id="experience">
+          <h2 class="label">{copy.experienceTitle}</h2>
+          <article class="job">
+            <p class="meta">{copy.job.dates}</p>
+            <h2>{copy.job.role} · {copy.job.company}</h2>
+            {copy.job.facts.map((fact) => <p>{fact}</p>)}
+          </article>
+        </section>
+        <section id="stack">
+          <h2 class="label">{copy.stackTitle}</h2>
+          <ul class="pills">
+            {copy.stack.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+        <section id="education">
+          <h2 class="label">{copy.educationTitle}</h2>
+          <ul class="education">
+            {copy.education.map((line) => <li>{line}</li>)}
+          </ul>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
