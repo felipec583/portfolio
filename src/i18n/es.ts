@@ -5,17 +5,20 @@ export const es: Copy = {
   role: 'Desarrollador backend',
   tagline: 'Node.js, TypeScript y PostgreSQL.',
   aboutTitle: 'Sobre mí',
-  about:
-    'Construyo backends con Node.js y TypeScript, sobre todo APIs y los datos que pasan por ellas. PostgreSQL guarda esa información, y los archivos van a S3 cuando no deben quedar en el flujo principal. Así trabajé en una startup. Antes de software estudié Comunicación Social, así que documentar y pasar un pedido del negocio a algo claro para construir es parte del trabajo.',
+  about: [
+    'Trabajo en el backend porque me gusta poner orden donde hay complejidad. Para mí, construir software no es solo hacer que una función retorne un resultado, sino asegurarme de que los datos fluyan de forma predecible, que la base de datos no sufra con consultas innecesarias y que los procesos pesados no bloqueen la respuesta al usuario.',
+    'Me enfoco en diseñar APIs REST claras con Node.js, TypeScript y PostgreSQL, cuidando siempre la estructura del código y la documentación para que cualquier otro desarrollador pueda entender qué hace el sistema sin tener que adivinar.',
+    'Hoy estoy aplicando todo esto en un proyecto personal: una herramienta full-stack para resolver un problema cotidiano que tengo con el control de gastos, cálculo de compras y división de cuentas, combinando un backend estructurado con una interfaz en Angular.',
+  ],
   projectsTitle: 'Proyectos',
   projects: [
     {
       name: 'PlateNote',
       href: 'https://github.com/felipec583/platenote',
       dates: 'Jun 2024 – Ene 2025',
-      problem: 'Problema: patentes, listas y turnos de un estacionamiento.',
-      built: 'Una API en TypeScript, Express y PostgreSQL.',
-      decision: 'Decisión: un cruce entre turnos marca las patentes que no coinciden.',
+      problem: 'API REST para el registro de patentes de un estacionamiento.',
+      built: 'La búsqueda responde desde una sola letra y devuelve sugerencias.',
+      decision: 'Cada turno guarda su lista y la del turno anterior, para contrastar entradas y salidas.',
       pills: ['TypeScript', 'Express', 'PostgreSQL'],
     },
   ],
@@ -25,15 +28,15 @@ export const es: Copy = {
     role: 'Desarrollador backend',
     dates: 'Enero 2025 – Octubre 2026',
     facts: [
-      'Cron jobs en Node.js sincronizan V1 y V2 por API.',
-      'Los archivos van a S3 fuera del flujo principal.',
-      'Una cola genera los documentos fuera del request.',
+      'Reemplacé la sincronización por cron y llamadas API, que chocaban con límites de tasa, por actualizaciones basadas en eventos con LISTEN/NOTIFY en PostgreSQL. Ambos sistemas usaban la misma base y solo se propagaban los cambios, sin volver a cargar todo en cada ciclo.',
+      'Implementé generación y empaquetado de documentos en cola con BullMQ, versionado y enlace firmado para descargas masivas, para que las peticiones HTTP no esperaran ese trabajo.',
     ],
   },
   stackTitle: 'Stack',
   stack: [
     'TypeScript',
     'JavaScript',
+    'Angular',
     'SQL',
     'Node.js',
     'Express',
@@ -49,9 +52,9 @@ export const es: Copy = {
   ],
   educationTitle: 'Educación',
   education: [
-    'Universidad Mayor — en curso, hasta diciembre 2027',
-    'Desafío Latam — certificado Full-Stack',
-    'Comunicación Social',
+    { place: 'Universidad Mayor', study: 'Ingeniería en Informática', dates: 'Previsto diciembre 2027' },
+    { place: 'Desafío Latam', study: 'Certificado Full-Stack', dates: 'Marzo 2023 – Mayo 2024' },
+    { place: 'Universidad Bicentenaria de Aragua', study: 'Comunicación Social', dates: 'Agosto 2013 – Noviembre 2018' },
   ],
   nav: [
     { id: 'about', label: 'Sobre mí' },

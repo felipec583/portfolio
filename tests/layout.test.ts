@@ -19,6 +19,8 @@ test('desktop sticks the identity column and phone does not', () => {
   const wide = block(css, '@media (min-width: 1024px)');
   const phone = block(css, '@media (max-width: 1023px)');
   assert.match(wide, /\.side\s*\{[^}]*position:\s*sticky/);
+  assert.doesNotMatch(wide, /clip:\s*rect/);
+  assert.match(css, /radial-gradient/);
   assert.match(wide, /width:\s*48%/);
   assert.match(wide, /\.main\s*\{[^}]*width:\s*52%/);
   assert.match(phone, /\.label\s*\{[^}]*position:\s*sticky/);
@@ -37,10 +39,12 @@ test('build emits Spanish at / and English at /en/', () => {
   const en = readFileSync(join(root, 'dist/en/index.html'), 'utf8');
   assert.match(es, /<html lang="es">/);
   assert.match(en, /<html lang="en">/);
-  assert.match(es, /Construyo backends con Node\.js y TypeScript/);
-  assert.match(en, /I build backends with Node\.js and TypeScript/);
-  assert.equal(es.includes('I build backends'), false);
-  assert.equal(en.includes('Construyo backends'), false);
+  assert.match(es, /Trabajo en el backend porque me gusta poner orden/);
+  assert.match(en, /I work on the backend because I like bringing structure/);
+  assert.equal(es.includes('I work on the backend because I like bringing structure'), false);
+  assert.equal(en.includes('Trabajo en el backend porque me gusta poner orden'), false);
+  assert.equal(es.includes('diciembre de 2027'), false);
+  assert.equal(en.includes('December 2027'), false);
   assert.match(es, /href="https:\/\/github\.com\/felipec583\/platenote"/);
   assert.match(en, /href="https:\/\/github\.com\/felipec583\/platenote"/);
   assert.match(es, /Octubre 2026/);

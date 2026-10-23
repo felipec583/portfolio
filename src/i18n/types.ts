@@ -13,7 +13,7 @@ export type Copy = {
   role: string;
   tagline: string;
   aboutTitle: string;
-  about: string;
+  about: string[];
   projectsTitle: string;
   projects: Project[];
   experienceTitle: string;
@@ -26,7 +26,7 @@ export type Copy = {
   stackTitle: string;
   stack: string[];
   educationTitle: string;
-  education: string[];
+  education: { place: string; study: string; dates: string }[];
   nav: { id: string; label: string }[];
   ariaGithub: string;
   ariaLinkedin: string;

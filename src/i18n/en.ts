@@ -5,17 +5,20 @@ export const en: Copy = {
   role: 'Backend developer',
   tagline: 'Node.js, TypeScript, and PostgreSQL.',
   aboutTitle: 'About',
-  about:
-    'I build backends with Node.js and TypeScript, mostly APIs and the data that moves through them. PostgreSQL holds that data, and files go to S3 when they should not sit in the main flow. I worked this way at a startup. Before software I studied Social Communication, so writing the documentation and turning a business request into a clear build is part of the job.',
+  about: [
+    "I work on the backend because I like bringing structure to complex systems. To me, building software isn't just about making a function return a result—it's about making sure data flows predictably, the database doesn't get hammered by repetitive requests, and heavy tasks stay out of the user's way.",
+    "I focus on building clean REST APIs with Node.js, TypeScript, and PostgreSQL, paying close attention to code organization and documentation so anyone else touching the codebase knows exactly what's going on.",
+    "Right now, I'm putting this into practice on a personal project: a full-stack app to fix a daily headache I have with tracking expenses, totaling shopping lists, and splitting debts, pairing a structured API with an Angular client.",
+  ],
   projectsTitle: 'Projects',
   projects: [
     {
       name: 'PlateNote',
       href: 'https://github.com/felipec583/platenote',
       dates: 'Jun 2024 – Jan 2025',
-      problem: 'Problem: parking-lot plates, lists, and shifts.',
-      built: 'A TypeScript, Express, and PostgreSQL API.',
-      decision: 'Decision: a cross-shift check flags plates that do not match.',
+      problem: 'REST API for parking-lot plate records.',
+      built: 'Search answers from a single letter and returns suggestions.',
+      decision: 'Each shift keeps its own list and the previous one, so entries and exits can be checked against each other.',
       pills: ['TypeScript', 'Express', 'PostgreSQL'],
     },
   ],
@@ -25,15 +28,15 @@ export const en: Copy = {
     role: 'Backend developer',
     dates: 'Jan 2025 – Oct 2026',
     facts: [
-      'Node.js cron jobs sync V1 and V2 through APIs.',
-      'Files go to S3 outside the main flow.',
-      'A queue handles document generation outside the request.',
+      'Replaced cron and API sync, which often hit rate limits, with event-driven updates using PostgreSQL LISTEN/NOTIFY. Both systems used the same database and only changes were propagated, instead of reloading everything on each run.',
+      'Implemented queued document generation and bulk packaging with BullMQ, versioning, and signed links for mass downloads, so HTTP requests did not wait on that work.',
     ],
   },
   stackTitle: 'Stack',
   stack: [
     'TypeScript',
     'JavaScript',
+    'Angular',
     'SQL',
     'Node.js',
     'Express',
@@ -49,9 +52,9 @@ export const en: Copy = {
   ],
   educationTitle: 'Education',
   education: [
-    'Universidad Mayor — in progress, through Dec 2027',
-    'Desafío Latam — Full-Stack certificate',
-    'Social Communication',
+    { place: 'Universidad Mayor', study: 'Informatics Engineering', dates: 'Expected Dec 2027' },
+    { place: 'Desafío Latam', study: 'Full-Stack certificate', dates: 'March 2023 – May 2024' },
+    { place: 'Universidad Bicentenaria de Aragua', study: 'Bachelor of Social Communication', dates: 'Aug 2013 – Nov 2018' },
   ],
   nav: [
     { id: 'about', label: 'About' },
