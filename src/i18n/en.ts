@@ -1,0 +1,66 @@
+import type { Copy } from './types.ts';
+
+export const en: Copy = {
+  htmlLang: 'en',
+  role: 'Backend developer',
+  tagline: 'Node.js, TypeScript, and PostgreSQL.',
+  aboutTitle: 'About',
+  about:
+    'I build backends with Node.js and TypeScript, mostly APIs and the data that moves through them. PostgreSQL holds that data, and files go to S3 when they should not sit in the main flow. I worked this way at a startup. Before software I studied Social Communication, so writing the documentation and turning a business request into a clear build is part of the job.',
+  projectsTitle: 'Projects',
+  projects: [
+    {
+      name: 'PlateNote',
+      href: 'https://github.com/felipec583/platenote',
+      dates: 'Jun 2024 – Jan 2025',
+      problem: 'Problem: parking-lot plates, lists, and shifts.',
+      built: 'A TypeScript, Express, and PostgreSQL API.',
+      decision: 'Decision: a cross-shift check flags plates that do not match.',
+      pills: ['TypeScript', 'Express', 'PostgreSQL'],
+    },
+  ],
+  experienceTitle: 'Experience',
+  job: {
+    company: 'Fruzty',
+    role: 'Backend developer',
+    dates: 'Jan 2025 – Oct 2026',
+    facts: [
+      'Node.js cron jobs sync V1 and V2 through APIs.',
+      'Files go to S3 outside the main flow.',
+      'A queue handles document generation outside the request.',
+    ],
+  },
+  stackTitle: 'Stack',
+  stack: [
+    'TypeScript',
+    'JavaScript',
+    'SQL',
+    'Node.js',
+    'Express',
+    'PostgreSQL',
+    'AWS S3',
+    'BullMQ',
+    'Redis',
+    'Docker',
+    'Cursor',
+    'Claude',
+    'Git',
+    'Postman',
+  ],
+  educationTitle: 'Education',
+  education: [
+    'Universidad Mayor — in progress, through Dec 2027',
+    'Desafío Latam — Full-Stack certificate',
+    'Social Communication',
+  ],
+  nav: [
+    { id: 'about', label: 'About' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'experience', label: 'Experience' },
+    { id: 'stack', label: 'Stack' },
+    { id: 'education', label: 'Education' },
+  ],
+  ariaGithub: 'GitHub',
+  ariaLinkedin: 'LinkedIn',
+  ariaEmail: 'Email',
+};

@@ -1,0 +1,66 @@
+import type { Copy } from './types.ts';
+
+export const es: Copy = {
+  htmlLang: 'es',
+  role: 'Desarrollador backend',
+  tagline: 'Node.js, TypeScript y PostgreSQL.',
+  aboutTitle: 'Sobre mí',
+  about:
+    'Construyo backends con Node.js y TypeScript, sobre todo APIs y los datos que pasan por ellas. PostgreSQL guarda esa información, y los archivos van a S3 cuando no deben quedar en el flujo principal. Así trabajé en una startup. Antes de software estudié Comunicación Social, así que documentar y pasar un pedido del negocio a algo claro para construir es parte del trabajo.',
+  projectsTitle: 'Proyectos',
+  projects: [
+    {
+      name: 'PlateNote',
+      href: 'https://github.com/felipec583/platenote',
+      dates: 'Jun 2024 – Ene 2025',
+      problem: 'Problema: patentes, listas y turnos de un estacionamiento.',
+      built: 'Una API en TypeScript, Express y PostgreSQL.',
+      decision: 'Decisión: un cruce entre turnos marca las patentes que no coinciden.',
+      pills: ['TypeScript', 'Express', 'PostgreSQL'],
+    },
+  ],
+  experienceTitle: 'Experiencia',
+  job: {
+    company: 'Fruzty',
+    role: 'Desarrollador backend',
+    dates: 'Enero 2025 – Octubre 2026',
+    facts: [
+      'Cron jobs en Node.js sincronizan V1 y V2 por API.',
+      'Los archivos van a S3 fuera del flujo principal.',
+      'Una cola genera los documentos fuera del request.',
+    ],
+  },
+  stackTitle: 'Stack',
+  stack: [
+    'TypeScript',
+    'JavaScript',
+    'SQL',
+    'Node.js',
+    'Express',
+    'PostgreSQL',
+    'AWS S3',
+    'BullMQ',
+    'Redis',
+    'Docker',
+    'Cursor',
+    'Claude',
+    'Git',
+    'Postman',
+  ],
+  educationTitle: 'Educación',
+  education: [
+    'Universidad Mayor — en curso, hasta diciembre 2027',
+    'Desafío Latam — certificado Full-Stack',
+    'Comunicación Social',
+  ],
+  nav: [
+    { id: 'about', label: 'Sobre mí' },
+    { id: 'projects', label: 'Proyectos' },
+    { id: 'experience', label: 'Experiencia' },
+    { id: 'stack', label: 'Stack' },
+    { id: 'education', label: 'Educación' },
+  ],
+  ariaGithub: 'GitHub',
+  ariaLinkedin: 'LinkedIn',
+  ariaEmail: 'Correo',
+};
