@@ -11,4 +11,4 @@ To add a project or change a sentence, edit `src/i18n/es.ts` and `src/i18n/en.ts
 
 To change the palette, edit the `:root` variables in `src/styles/global.css`. Leave the `1024px` and `1023px` blocks unless the layout itself changes.
 
-Finance Tracker is not on the page.
+
